@@ -33,7 +33,6 @@ sam build HelloWorldFunction --template template.yaml --build-dir HelloWorldFunc
 The SAM CLI installs dependencies defined in `HelloWorldFunction/pom.xml`, creates a deployment package, and saves it in the `.aws-sam/build` folder.
 
 
-
 ## Run your skill locally
 
 Test a single function by invoking it directly with a test event. An event is a JSON document that represents the input that the function receives from the event source. Test events are included in the `events` folder in this project.
@@ -43,6 +42,15 @@ Run functions locally and invoke them with the `sam local invoke` command.
 ```bash
 sam local invoke HelloWorldFunction --template HelloWorldFunction\.aws-sam\build\template.yaml
 ```
+
+## Debug your skill locally
+
+Tests are defined in the `events` folder in this project.
+
+```bash
+sam local invoke HelloWorldFunction --template HelloWorldFunction\.aws-sam\build\template.yaml --event events/event.json --debug-port 56531
+```
+With the AWS Toolkit installed in your IDE it easy to set up and debug with breakpoints your skills dependending on the event.json
 
 ## Test your skill locally
 
