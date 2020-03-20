@@ -19,6 +19,11 @@ Resources:
       Runtime: java8
       MemorySize: 512
       Events:
+        HelloWorldApi:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /api/alexa
+            Method: post
         HelloWorld:
           Type: AlexaSkill # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
 
