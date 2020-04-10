@@ -43,6 +43,12 @@ Run functions locally and invoke them with the `sam local invoke` command.
 sam local invoke HelloWorldFunction --template HelloWorldFunction\.aws-sam\build\template.yaml
 ```
 
+**NOTE:** Using LocalDebugger.java is as easy as run with visual studio code or IntelliJ. Take a look to the configurations of both IDEs in:
+For this type of running it is not necessary to run any SAM CLI Command.
+1. `.vscode\launch.json`
+2. `.idea\runConfigurations\LocalDebugger.xml`
+
+
 ## Debug your skill locally
 
 Tests are defined in the `events` folder in this project.
@@ -52,6 +58,11 @@ sam local invoke HelloWorldFunction --template HelloWorldFunction\.aws-sam\build
 ```
 With the AWS Toolkit installed in your IDE it easy to set up and debug with breakpoints your skills dependending on the event.json
 
+**NOTE:** Using LocalDebugger.java is as easy as debug with visual studio code or IntelliJ. Take a look to the configurations of bot IDEs in:
+For this type of running it is not necessary to run any SAM CLI Command.
+1. `.vscode\launch.json`
+2. `.idea\runConfigurations\LocalDebugger.xml`
+
 ## Test your skill locally
 
 Tests are defined in the `events` folder in this project.
@@ -59,6 +70,9 @@ Tests are defined in the `events` folder in this project.
 ```bash
 sam local invoke HelloWorldFunction --template HelloWorldFunction\.aws-sam\build\template.yaml --event  events/event.json
 ```
+
+**NOTE:** Using LocalDebugger.java you can make the request below to http://localhost:3001/:
+
 In the event.json you have an example of a LaunchRequest mocked from a skill. Take a look:
 
 ```json
@@ -103,6 +117,25 @@ In the event.json you have an example of a LaunchRequest mocked from a skill. Ta
 
 
 ```
+
+## Test requests directly from Alexa
+
+ngrok is a very cool, lightweight tool that creates a secure tunnel on your local machine along with a public URL you can use for browsing your local site or APIs.
+
+When ngrok is running, it listens on the same port that you’re local web server is running on and proxies external requests to your local machine
+
+From there, it’s a simple step to get it to listen to your web server. Say you’re running your local web server on port 3001. In terminal, you’d type in: `ngrok http 3001`. This starts ngrok listening on port 3001 and creates the secure tunnel:
+
+![image](img/tunnel.png)
+
+So now you have to go to [Alexa Developer console](https://developer.amazon.com/alexa/console/ask), go to your skill > endpoints > https, add the https url generated above . Eg: https://20dac120.ngrok.io.
+
+Select the My development endpoint is a sub-domain.... option from the dropdown and click save endpoint at the top of the page.
+
+Go to Test tab in the Alexa Developer Console and launch your skill.
+
+The Alexa Developer Console will send a HTTPS request to the ngrok endpoint (https://20dac120.ngrok.io) which will route it to your skill running on Web API server at http://localhost:3001.
+
 
 ## Deploy your skill to AWS
 

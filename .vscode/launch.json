@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "request": "launch",
+            "name": "Launch Skill",
+            // Specify name of local adapter(for java) class
+            "mainClass": "com.amazon.ask.debugger.LocalDebugger",
+            "args": [
+                // port number on your local host where the alexa requests will be routed to
+                "--portNumber", "3001",
+                // name of your java stream handler class name
+                "--skillStreamHandlerClass", "com.xavidop.alexa.helloworld.lambda.App"
+            ],
+        }
+    ]
+}

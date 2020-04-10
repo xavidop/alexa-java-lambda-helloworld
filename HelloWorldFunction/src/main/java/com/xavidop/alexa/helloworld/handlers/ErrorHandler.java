@@ -3,6 +3,7 @@ package com.xavidop.alexa.helloworld.handlers;
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
 import com.amazon.ask.model.Response;
+import com.xavidop.alexa.helloworld.localization.LocalizationManager;
 
 import java.util.Optional;
 
@@ -15,7 +16,7 @@ public class ErrorHandler implements RequestHandler {
 
     @Override
     public Optional<Response> handle(HandlerInput handlerInput) {
-        final String speechOutput = "Sorry, I can't understand the command. Please say again.";
+        final String speechOutput =  LocalizationManager.getInstance().getMessage("ERROR_MSG");
         return handlerInput.getResponseBuilder()
                 .withSpeech(speechOutput)
                 .withReprompt(speechOutput)

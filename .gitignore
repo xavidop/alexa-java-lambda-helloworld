@@ -4,7 +4,10 @@
 .settings/
 
 # Intellij
-.idea/
+!.idea/runConfigurations/*.xml
+.idea/*.xml
+.idea/libraries
+.idea/.gitignore
 *.iml
 *.iws
 
