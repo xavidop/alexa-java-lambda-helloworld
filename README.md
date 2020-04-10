@@ -43,7 +43,7 @@ Run functions locally and invoke them with the `sam local invoke` command.
 sam local invoke HelloWorldFunction --template HelloWorldFunction\.aws-sam\build\template.yaml
 ```
 
-**NOTE:** Using LocalDebugger.java is as easy as run with visual studio code or IntelliJ. Take a look to the configurations of both IDEs in:
+**NOTE:** Using LocalDebugger.java is as easy as **run** with visual studio code or IntelliJ. Take a look to the configurations of both IDEs in:
 For this type of running it is not necessary to run any SAM CLI Command.
 1. `.vscode\launch.json`
 2. `.idea\runConfigurations\LocalDebugger.xml`
@@ -58,7 +58,7 @@ sam local invoke HelloWorldFunction --template HelloWorldFunction\.aws-sam\build
 ```
 With the AWS Toolkit installed in your IDE it easy to set up and debug with breakpoints your skills dependending on the event.json
 
-**NOTE:** Using LocalDebugger.java is as easy as debug with visual studio code or IntelliJ. Take a look to the configurations of bot IDEs in:
+**NOTE:** Using LocalDebugger.java is as easy as **debug** with visual studio code or IntelliJ. Take a look to the configurations of both IDEs in:
 For this type of running it is not necessary to run any SAM CLI Command.
 1. `.vscode\launch.json`
 2. `.idea\runConfigurations\LocalDebugger.xml`
